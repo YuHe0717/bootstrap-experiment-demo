@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="task.css">
+    <title>bootstrapping experiment</title>
+    <link rel="stylesheet" href="CS.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap">
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  </head>
+
+  <body>
+    
+
+    <div id="prolific_id" class="base">
+      <h3>Enter your Prolific ID to continue:</h3>
+      <textarea name="prolific_id_text" id="prolific_id_text" placeholder=""></textarea>
+      <div class='button-group-vc'>
+      <button class='big-button' id='prolific_id-btn'>Confirm</button>
+      </div>
+    </div>
+
+
+    <!-- <div id="consent_sheet" class="container" style="display: none;">
+      <img src="logo.png" alt="University of Edinburgh Logo" class="logo">
+      <h1 class="cs-h1">Information sheet for participants</h1>
+      <h2 class="cs-h2">Study title:<span> How does bootstrapping influence the ability to solve increasingly complex puzzles?</span></h2>
+      <h2 class="cs-h2">Principal Investigator:<span> Neil Bramley</span></h2>
+      <h2 class="cs-h2">Researcher collecting data:<span> Yu He</span></h2>
+      <h2 class="cs-h2">What is this document?<span> This document explains what kind of study we’re doing, what your rights are, and what will be done with your data. You should print this page for your records.</span></h2>
+      <h2 class="cs-h2">Nature of the study<span> You are invited to participate in a study which involves solving puzzles that require you to form a specified target shape through a series of operations in as few steps as possible. Before you start, there will be some simple instructions. Your responses will be recorded. Your session should last for up to 15 minutes. You will be given full instructions shortly.</span></h2>
+      <h2 class="cs-h2">Compensation<span> You will be paid <strong>£1.5</strong> for your participation in this study. There are a total of four puzzles in the test session. For each correctly solved task, you will receive a bonus ranging from <strong>£0.3 to £0.5</strong> depending on the efficiency of your solution. </span></h2>
+      <h2 class="cs-h2">Risks and benefits<span> There are no known risks to participation in this study. Other than the payment mentioned, there are no tangible benefits to you; however, you will be contributing to our knowledge about problem solving.</span></h2>
+      <h2 class="cs-h2">Confidentiality and use of data<span> All the information we collect during the course of the research will be processed in accordance with Data Protection Law. In order to safeguard your privacy, we will not collect any personal information about you. Your data will be only referred to by a unique participant number. The anonymous data collected during this study will be used for research purposes and may be shared with other researchers or with the general public (e.g. we may make it available through the worldwide web or use it in TV or radio broadcasts).</span></h2>
+      <h2 class="cs-h2">What are my data protection rights?<span> The University of Edinburgh is a Data Controller for the information you provide. You have the right to access information held about you. Your right of access can be exercised in accordance with Data Protection Law. You also have other rights including rights of correction, erasure, and objection. For more details, including the right to lodge a complaint with the Information Commissioner’s Office, please visit <a href="https://www.ico.org.uk" target="_blank">www.ico.org.uk</a>. Questions, comments, and requests about your personal data can also be sent to the University Data Protection Officer at <a href="mailto:dpo@ed.ac.uk">dpo@ed.ac.uk</a>.</span></h2>
+      <h2 class="cs-h2">Voluntary participation and right to withdraw<span> You must be 18 years old or older to participate. Your participation is voluntary, and you may withdraw from the study at any time while you are completing it. However, please note that once you submit your survey, we are not able to identify you, and therefore we cannot remove your data from the study after that point.</span></h2>
+      <h2 class="cs-h2"><span>If you have any questions about what you’ve just read, please feel free to ask or contact us later. You can contact us by email at <a href="mailto:X.He-66@sms.ed.ac.uk">X.He-66@sms.ed.ac.uk</a>. This project has been approved by PPLS Ethics committee. If you have questions or comments regarding your rights as a participant, please contact the School Research Convenor at <a href="mailto:ppls.rec@ed.ac.uk">ppls.rec@ed.ac.uk</a></span></h2>
+      <h2 class="cs-h2"><span>By accepting this HIT you consent to the following:</span></h2>
+      <ul>
+          <li><strong>I am 18 years old or older.</strong></li>
+          <li><strong>I agree to participate in this study.</strong></li>
+          <li>I confirm that I have read and understood <strong>how my data will be stored and used.</strong></li>
+          <li>I understand that I have the <strong>right to terminate this session at any point</strong> before completing the study. But I cannot require to delete my data after the study completion because my data cannot be reidentified.</li>
+      </ul>
+      <button id="consentButton" class="cs-button">Consent and Continue</button>
+  </div> -->
+
+
+
+
+    <div id="training" class="base" style="display: none;">
+      <h1>Instructions</h1>
+      <div class="frame-simple" style="height:600px;">
+        <p>Look at the instructions below clearfully. Play with the keys and see what they can do.</p>
+        <div class="taskbox">
+          <div class="taskinnerbox">
+            <table class="demo-tabs" id="demo-grid"></table>
+          </div>
+          <div class="key-button-group">
+            <!--<button class="key-button" id='playgd-zif'>Zif</button> -->
+            <!-- <button class="key-button" id='playgd-clear'>Clear all</button> -->
+          </div>
+        </div>
+        <p>You can use the <strong>L key</strong> to add a basic figure (you can continue to add basic figures as you work). You can use arrows keys on your keyboard (&#8592;,&#8593;,&#8594;, and &#8595;) to move things around. Try using <strong>R and F keys</strong> to see how the graph will transform. You can use the <strong>'Clear all'</strong> button to reset the puzzle and try again  </p>
+        <p><strong>Important note</strong>: Try to <strong>add more than one basic figure</strong> and see how the graph will transform when you <strong> use the R and F keys</strong>.</p>
+      </div>
+      <div class='button-group-vc'>
+        <button class='big-button' id='training-clear-btn'>Clear all</button>
+        <button class='big-button' id='training-next-btn' disabled>Next</button>
+      </div>
+    </div>
+
+    <div id="training-quiz" class="base" style="display: none;">
+        <h1>Check your understanding</h1>
+        <div id="instruction-quiz-text" class="frame-simple">
+          <form id='training-quiz-form'>
+            <ol>
+              <li>
+                Which key makes a   <canvas id="canvas-triangle" width="60" height="90"></canvas> ?
+              </li>
+              <p class="form-p">
+                <input type="radio" name="check1" value="rotate">R&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="radio" name="check1" value="flip">F&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="radio" name="check1" value="addLshape">L&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="radio" name="check1" value="nothing">A
+              </p>
+             
+              <li>What does the Key “F” do?</li>
+              <p class="form-p">
+                <input type="radio" name="check2" value="right90">Rotate clockwise&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="radio" name="check2" value="left90">Rotate anti-clockwise
+                <br>
+                <input type="radio" name="check2" value="fliplr">Flip horizontal&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="radio" name="check2" value="fliptd">Flip vertical
+              </p>
+              <li>What does the Key “R” do?</li>
+              <p class="form-p">
+                <input type="radio" name="check3" value="right90">Rotate clockwise&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="radio" name="check3" value="left90">Rotate anti-clockwise
+                <br>
+                <input type="radio" name="check3" value="fliplr">Flip horizontal&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="radio" name="check3" value="fliptd">Flip vertical
+              </p>
+              <li>Can you move things with arrow keys?</li>
+              <p class="form-p">
+                <input type="radio" name="check4" value="yes">Yes&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="radio" name="check4" value="no">No
+              </p>
+              <li>When you add more than one basic figure, you can move them seperatly</li>
+              <p class="form-p">
+                <input type="radio" name="check5" value="true">True&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="radio" name="check5" value="false">False
+              </p>
+            </ol>
+          </form>
+        </div>
+        <div class='button-group-vc'>
+          <button class='big-button' id='training-quiz-check-btn' disabled>Check</button>
+        </div>
+        <div id="training-retry" style="display: none;">
+          <h3>Oooops, please test those buttons carefully and try again.</h3>
+          <div class='button-group-vc'>
+            <button class='big-button' id='training-retry-btn'>&lt;&lt;</button>
+          </div>
+        </div>
+        <!-- <div class='button-group-vc'>
+          <button class='big-button' id='training-quiz-next-btn'>Next</button>
+        </div> -->
+      </div>
+  
+  
+  
+  
+  
+      <div id="instruction" class="base" style="display: none;">
+        <h1>Training Session</h1>
+        <div id="instruction-0" class="frame-simple" style="height:480px;">
+          <p>Cool! You will complete five puzzles in this training session. Please read the following instructions carefully:</p>
+          <p>1. In each task, you will see a target shape, and you need to make this shape by pressing the keys on the keyboard.</p>
+          <p>2. If you find yourself stuck or make a mistake, you can use the "Clear All" button to reset the current puzzle and try again. You may use this button as many times as you need until you successfully solve the puzzle.</p>
+          <p>3. You can only access the next puzzle after successfully solving the current one.</p>
+          <p>4. You are not allowed to use any external aids to help you complete the puzzles, such as using paper and pen to draw shapes.</p>
+        </div>
+        <div class='button-group-vc'>
+          <button class='big-button' id='intro-next-btn'>Next</button>
+        </div>
+      </div>
+
+  
+      <!-- training session-->
+
+      <div id="training-task" class="base" style="display: none;">
+      </div>
+
+
+      <!-- test session-->
+      <div id="test-intro" class="base" style="display: none;">
+        <h1>Test Session</h1>
+        <div class="frame-simple" style="height:690px;">
+          <p>Fantastic job completing the training session! Now, it's time to tackle 4 exciting puzzles in the test session. Please read the following instructions carefully to maximize your success:</p>
+          <p>1. In each task, you will see a target shape. Your goal is to recreate this shape by pressing the keys on the keyboard. There is no need to move the shape to the center of the grid to match the target shape.</p>
+          <p>2. Remember, there is <strong>no "Clear All"</strong> button this time, so you only have <strong>one chance</strong>. Plan your moves carefully before you start!</p>
+          <p>3. Aim to complete each task in <strong>as few steps as possible</strong>. Only the L, F, and R keys count as steps; arrow keys do not.</p>
+          <!--<p>4. For each task you solve successfully with the fewest steps, you'll earn a bonus of <strong>£0.50</strong>.</p>-->
+          <p>4. For each task you <strong>complete correctly</strong>, you will earn an additional <strong>£0.3 bonus</strong>. If you complete a task correctly <strong>using the minimum number of steps</strong>, you will earn <strong>£0.5</strong> for that task. </p>
+          <p>5. Although the time taken to solve each task is not restricted, we kindly ask that you do not leave or engage in other activities during the test session to ensure the scientific validity of the experiment.</p>
+
+        </div>
+        <div class='button-group-vc'>
+          <button class='big-button' id='test-intro-next-btn'>Next</button>
+        </div>
+      </div>
+
+      <div id="instruction-quiz" class="base" style="display: none;">
+        <h1>Some quick checks</h1>
+        <div class="frame-simple" style="height:550px;">
+          <form id='intro-quiz-form'>
+            <ol>
+              <li>Your task is to make the target shape. </li>
+              <p class="form-p">
+                <input type="radio" name="intro1">True&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="radio" name="intro1">False
+              </p>
+              <li>You have unlimited chances to complete each task. </li>
+              <p class="form-p">
+                <input type="radio" name="intro2">True&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="radio" name="intro2">False
+              </p>
+              <li>There is a "Clear All" button in this test session. </li>
+              <p class="form-p">
+                <input type="radio" name="intro3">True&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="radio" name="intro3">False
+              </p>
+              <li>The arrow keys do not count as steps in completing the task. </li>
+              <p class="form-p">
+                <input type="radio" name="intro4">True&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="radio" name="intro4">False
+              </p>
+              <li>You will earn a bonus of £0.50 for each task you solve successfully with the fewest steps. </li>
+              <p class="form-p">
+                <input type="radio" name="intro5">True&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="radio" name="intro5">False
+              </p>
+            </ol>
+          </form>
+        </div>
+
+        <div class='button-group-vc'>
+          <button class='big-button' id='intro-quiz-check-btn' disabled>Check</button>
+        </div>
+        <div id="intro-retry" style="display: none;">
+          <h3>Oooops, please read the instructions carefully and try again.</h3>
+          <div class='button-group-vc'>
+            <button class='big-button' id='intro-retry-btn'>&lt;&lt;</button>
+          </div>
+        </div>
+        <div id="intro-pass" style="display: none;">
+          <h3>Well done! Start your first task now.</h3>
+          <div class='button-group-vc'>
+            <button class='big-button' id='intro-pass-btn'>&gt;&gt;</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="test-task" class="base" style="display: none;">
+
+      </div>
+
+
+      <div id="debrief" class="base" style="display: none;" >
+        <h1>Thank you for your contributions to science</h1>
+        <h4>You will be eligible for full payment once you answer the following questions.</h4>
+        <h4><b>Note</b>: To continue, please answer <span style="color:red">all questions</span>.</h4>
+        <form id="postquiz"  class='frame' action="debrief" method="post">
+          <b>1.&nbsp;</b>How old are you?:
+           <input
+              id="age" name="age" class="posttestQ" type="number"
+              maxlength = "3" min="18" max="100"step = "1"
+            > years
+          </p>
+          <p>
+            <b>2.&nbsp;</b>What is your gender?
+            <select id="sex" name="sex" class="posttestQ">
+              <option value="noresp" SELECTED></option>
+              <option value="female">Female</option>
+              <option value="male">Male</option>
+              <option value="other">Other</option>
+              <option value="noresponse">I&rsquo;d prefer not to respond</option>
+            </select>
+          </p>
+
+          <p>
+            <b>3.&nbsp;</b>On a scale of 1-10 (where 10 is the most engaged), please rate how <b>ENGAGING</b> you found the learning task:
+            <select id="engagement" name="engagement" class="posttestQ">
+              <option value="--" SELECTED>
+              <option value="10">10 - Very engaging</option>
+              <option value="9">9</option>
+              <option value="8">8</option>
+              <option value="7">7</option>
+              <option value="6">6</option>
+              <option value="5">5 - Moderately</option>
+              <option value="4">4</option>
+              <option value="3">3</option>
+              <option value="2">2</option>
+              <option value="1">1</option>
+              <option value="0">0 - Not engaged</option>
+            </select>
+          </p>
+
+          <p>
+            <b>4.&nbsp;</b>On a scale of 1-10 (where 10 is the most difficult), please rate how <b>DIFFICULT</b> you found the learning task:
+            <select id="difficulty" name="difficulty" class="posttestQ">
+              <option value="--" SELECTED>
+              <option value="10">10 - Very difficult</option>
+              <option value="9">9</option>
+              <option value="8">8</option>
+              <option value="7">7</option>
+              <option value="6">6</option>
+              <option value="5">5 - Moderately difficult</option>
+              <option value="4">4</option>
+              <option value="3">3</option>
+              <option value="2">2</option>
+              <option value="1">1</option>
+              <option value="0">0 - Not difficult at all</option>
+            </select>
+          </p>
+
+          <p>
+            <b>5.&nbsp;</b>Do you think the tasks in the training session helped you to complete the tasks successfully in the test session? On a scale of 1-5 (where 5 is the most helpful), please rate how <b>HELPFUL</b> you found the training session:
+            <select id="helpful" name="helpful" class="posttestQ">
+              <option value="--" SELECTED>
+              <option value="5">5 - Extremely helpful</option>
+              <option value="4">4 - Very helpful</option>
+              <option value="3">3 - Moderately helpful</option>
+              <option value="2">2 - Very little help</option>
+              <option value="1">1 - Not helpful at all</option>
+            </select>
+          </p>
+
+          <p>
+            <b>6.&nbsp;</b>Did you use any external aids to help you complete the puzzles? (e.g., paper and pen). Your answer will not affect your payment.
+            <select id="external aids" name="external aids" class="posttestQ">
+              <option value="--" SELECTED>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
+          </p>
+          
+       
+        </form>
+        <div class='button-group-vc'>
+          <button class='big-button' id='done-btn' disabled>Done</button>
+        </div>
+     
+      </div>
+
+
+
+      <div id="completed" class="base" style="display:none;" >
+        <div id="code-div">
+          <h1>Your completion code is:</h1>
+          <h1 id="completion-code"></h1>
+        </div>
+      </div>
+  
+  
+    </body>
+  
+   
+    <script type="text/javascript" src="funcs.js"></script>
+    <script type="text/javascript" src="task.js"></script>
+    <!-- <form action="data_save.php" method="post"></form> -->
+
+  
+  </html>
